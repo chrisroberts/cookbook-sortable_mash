@@ -20,4 +20,4 @@ Cooked in.
 Cookbook Info
 =============
 
-Repo: https://github.com/chrisroberts/sortable_mash
+Repo: https://github.com/chrisroberts/cookbook-sortable_mash
