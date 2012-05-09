@@ -1,6 +1,7 @@
-module SortableMash
+module SortableHash
   def sorted_hash(hash=nil)
     hash ||= self
+    hash = hash.to_hash if hash.respond_to?(:to_hash)
     if(hash.is_a?(Hash))
       new_hash = defined?(OrderedHash) ? OrderedHash.new : Hash.new
       hash.keys.sort.each do |key|
@@ -20,4 +21,5 @@ module SortableMash
   end
 end
 
-Mash.send(:include, SortableMash)
+Chef::Mash.send(:include, SortableHash)
+Chef::Node::Attribute.send(:include, SortableHash)
