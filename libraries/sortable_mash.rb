@@ -23,3 +23,6 @@ end
 
 Chef::Mash.send(:include, SortableHash)
 Chef::Node::Attribute.send(:include, SortableHash)
+unless(Hash.instance_methods.map(&:to_sym).include?(:sorted_hash))
+  Hash.send(:include, SortableHash)
+end
